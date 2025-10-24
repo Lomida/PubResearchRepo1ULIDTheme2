@@ -1,29 +1,23 @@
 import os
 import sys
-
-sys.path.append(os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../src'))
 
 html_theme = 'unary_theme'
 html_theme_path = ['_themes']
 
 exclude_patterns = [
-    '_build',     
-    'Thumbs.db',       
-    '.DS_Store',         
-    'venv',              
-    '.venv',             
-    '_static',           
-    '_templates',        
-    'conf.py',           
-    'Makefile',          
-    'make.bat',         
-    '**/__pycache__',    
-    '**/*.pyc',          
-    'docs/_build',      
-    'docs/_static',     
-    'docs/_templates',   
-    '.git',              
-    '.github'         
+    '_build',
+    'Thumbs.db',
+    '.DS_Store',
+    'venv',
+    '.venv',
+    'sphinx_venv',
+    'sphinx_venv/**',
+    '**/sphinx_venv/**',
+    '**/__pycache__',
+    '**/*.pyc',
+    '_static',
+    '_templates',
 ]
 
 html_theme_options = {
