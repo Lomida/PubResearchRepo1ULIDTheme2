@@ -157,6 +157,77 @@ div.body {
    ======================================== */
 
 /* Sidebar headings */
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #FFC904;
+    font-size: 1rem;
+}
+
+div.sphinxsidebar h3:first-child {
+    margin-top: 0;
+}
+
+/* Sidebar links */
+div.sphinxsidebar a {
+    color: #34495e;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    margin: 0.25rem 0;
+}
+
+div.sphinxsidebar a:hover {
+    color: #FFC904;
+    background: rgba(255, 201, 4, 0.1);
+    transform: translateX(4px);
+}
+
+/* Sidebar lists */
+div.sphinxsidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+}
+
+div.sphinxsidebar ul li {
+    margin: 0;
+}
+
+div.sphinxsidebar ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    border-left: 2px solid #e0e0e0;
+    margin-left: 0.5rem;
+}
+
+div.sphinxsidebar ul ul li {
+    font-size: 0.9rem;
+}
+
+/* Current page indicator */
+div.sphinxsidebar li.current > a {
+    color: #FFC904;
+    font-weight: 600;
+    background: rgba(255, 201, 4, 0.15);
+}
+
+/* Toctree specific */
+div.sphinxsidebar .toctree-l1 > a {
+    font-weight: 600;
+    padding: 0.6rem 0.75rem;
+}
+
+div.sphinxsidebar .toctree-l2 > a {
+    font-weight: 400;
+    font-size: 0.9rem;
+}
 
 /* ========================================
    Code Block Styles
