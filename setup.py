@@ -1,14 +1,22 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='unary_theme',
+    name='unary-theme',
     version='0.1.0',
-    description='the unary lab theme',
+    description='Unary Lab theme',
     author='Devon Lister',
-    author_email='DevonLister@yahoo.com',
+    author_email='devonlister@yahoo.com',
     url='https://github.com/Lomida/PubResearchRepo1ULIDTheme2',
     packages=find_packages(),
     include_package_data=True,
+    package_data={
+        'unary_theme': [
+            'theme.conf',
+            '*.html',
+            'static/*.css',
+            'static/*.js',
+        ],
+    },
     install_requires=[
         'sphinx>=4.0',
     ],
