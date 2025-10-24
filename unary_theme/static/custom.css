@@ -1,7 +1,7 @@
 /* Banner Styles */
 .custom-banner {
     background-color: #FFC904;
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -9,7 +9,6 @@
     position: relative;
 }
 
-/* Thin black line ~10% from bottom */
 .custom-banner::after {
     content: "";
     position: absolute;
