@@ -6,6 +6,26 @@ sys.path.append(os.path.abspath('.'))
 html_theme = 'unary_theme'
 html_theme_path = ['_themes']
 
+exclude_patterns = [
+    '_build',     
+    'Thumbs.db',       
+    '.DS_Store',         
+    'venv',              
+    '.venv',             
+    '_static',           
+    '_templates',        
+    'conf.py',           
+    'Makefile',          
+    'make.bat',         
+    '**/__pycache__',    
+    '**/*.pyc',          
+    'docs/_build',      
+    'docs/_static',     
+    'docs/_templates',   
+    '.git',              
+    '.github'         
+]
+
 html_theme_options = {
     'logo_image': 'logo.svg',
     'logo_link': 'https://www.unarylab.com/,
