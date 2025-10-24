@@ -1,0 +1,19 @@
+{% extends "basic/layout.html" %}
+
+{%- block header %}
+<header class="custom-banner">
+    <div class="banner-content">
+        <a href="{{ theme_logo_link }}" class="logo-link">
+            <img src="{{ pathto('_static/' + theme_logo_image, 1) }}" alt="Logo" class="logo-image">
+        </a>
+        <nav class="banner-nav">
+            <a href="{{ theme_nav_link_1_url }}" class="nav-link">{{ theme_nav_link_1_text }}</a>
+            <a href="{{ theme_nav_link_2_url }}" class="nav-link">{{ theme_nav_link_2_text }}</a>
+            <a href="{{ theme_nav_link_3_url }}" class="nav-link">{{ theme_nav_link_3_text }}</a>
+        </nav>
+    </div>
+</header>
+{%- endblock %}
+
+{%- block footer %}
+{%- endblock %}
