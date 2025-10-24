@@ -92,82 +92,7 @@
 }
 
 /* ========================================
-   Sidebar Navigation Styles
-   ======================================== */
-div.sphinxsidebar {
-    margin-top: 2rem;
-    padding: 0 1rem;
-}
-
-div.sphinxsidebarwrapper {
-    padding: 1.5rem;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-/* Sidebar headings */
-div.sphinxsidebar h3,
-div.sphinxsidebar h4 {
-    color: #2c3e50;
-    font-weight: 700;
-    margin: 1.5rem 0 1rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #FFC904;
-    font-size: 1.1rem;
-}
-
-div.sphinxsidebar h3:first-child {
-    margin-top: 0;
-}
-
-/* Sidebar links */
-div.sphinxsidebar a {
-    color: #34495e;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    display: inline-block;
-}
-
-div.sphinxsidebar a:hover {
-    color: #FFC904;
-    transform: translateX(4px);
-}
-
-/* Sidebar lists */
-div.sphinxsidebar ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0.5rem 0;
-}
-
-div.sphinxsidebar ul li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-div.sphinxsidebar ul li:last-child {
-    border-bottom: none;
-}
-
-div.sphinxsidebar ul ul {
-    padding-left: 1.25rem;
-    margin-top: 0.5rem;
-}
-
-div.sphinxsidebar ul ul li {
-    padding: 0.35rem 0;
-    font-size: 0.9rem;
-}
-
-/* Current page indicator */
-div.sphinxsidebar li.current > a {
-    color: #FFC904;
-    font-weight: 600;
-}
-
-/* ========================================
-   Main Content Area Styles
+   Layout Structure - Sidebar on Left
    ======================================== */
 body {
     margin: 0;
@@ -181,18 +106,127 @@ body {
 div.document {
     margin-top: 0;
     background: #f8f9fa;
+    display: flex;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/* Sidebar positioned on the left */
+div.sphinxsidebar {
+    width: 280px;
+    flex-shrink: 0;
+    padding: 2rem 1rem;
+    background: #ffffff;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 140px; /* Adjust based on your banner height */
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    order: 1; /* Sidebar first */
+}
+
+div.sphinxsidebarwrapper {
+    padding: 0;
+}
+
+/* Main content area */
 div.documentwrapper {
+    flex: 1;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    order: 2; /* Content second */
+}
+
+div.bodywrapper {
+    margin: 0;
+}
+
+div.body {
     background: #ffffff;
     margin: 2rem;
     padding: 2rem 3rem;
     border-radius: 12px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    max-width: none;
 }
 
-div.body {
-    max-width: 900px;
+/* ========================================
+   Sidebar Navigation Styles
+   ======================================== */
+
+/* Sidebar headings */
+div.sphinxsidebar h3,
+div.sphinxsidebar h4 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #FFC904;
+    font-size: 1rem;
+}
+
+div.sphinxsidebar h3:first-child {
+    margin-top: 0;
+}
+
+/* Sidebar links */
+div.sphinxsidebar a {
+    color: #34495e;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: block;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    margin: 0.25rem 0;
+}
+
+div.sphinxsidebar a:hover {
+    color: #FFC904;
+    background: rgba(255, 201, 4, 0.1);
+    transform: translateX(4px);
+}
+
+/* Sidebar lists */
+div.sphinxsidebar ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0;
+}
+
+div.sphinxsidebar ul li {
+    margin: 0;
+}
+
+div.sphinxsidebar ul ul {
+    padding-left: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    border-left: 2px solid #e0e0e0;
+    margin-left: 0.5rem;
+}
+
+div.sphinxsidebar ul ul li {
+    font-size: 0.9rem;
+}
+
+/* Current page indicator */
+div.sphinxsidebar li.current > a {
+    color: #FFC904;
+    font-weight: 600;
+    background: rgba(255, 201, 4, 0.15);
+}
+
+/* Toctree specific */
+div.sphinxsidebar .toctree-l1 > a {
+    font-weight: 600;
+    padding: 0.6rem 0.75rem;
+}
+
+div.sphinxsidebar .toctree-l2 > a {
+    font-weight: 400;
+    font-size: 0.9rem;
 }
 
 /* ========================================
@@ -373,6 +407,7 @@ div.sphinxsidebar input[type="text"] {
     border-radius: 8px;
     font-size: 0.9rem;
     transition: border-color 0.2s ease;
+    box-sizing: border-box;
 }
 
 div.sphinxsidebar input[type="text"]:focus {
@@ -391,6 +426,7 @@ div.sphinxsidebar input[type="submit"] {
     cursor: pointer;
     transition: all 0.2s ease;
     margin-top: 0.5rem;
+    width: 100%;
 }
 
 div.sphinxsidebar input[type="submit"]:hover {
@@ -407,8 +443,52 @@ div.footer {
 }
 
 /* ========================================
+   Sidebar Scrollbar Styling
+   ======================================== */
+div.sphinxsidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+div.sphinxsidebar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+div.sphinxsidebar::-webkit-scrollbar-thumb {
+    background: #c0c0c0;
+    border-radius: 3px;
+}
+
+div.sphinxsidebar::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* ========================================
    Responsive Design
    ======================================== */
+@media (max-width: 1024px) {
+    div.document {
+        flex-direction: column;
+    }
+    
+    div.sphinxsidebar {
+        width: 100%;
+        position: relative;
+        top: 0;
+        height: auto;
+        order: 2; /* Sidebar moves below content on mobile */
+        padding: 1.5rem 1rem;
+    }
+    
+    div.documentwrapper {
+        order: 1; /* Content first on mobile */
+    }
+    
+    div.body {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .banner-content {
         flex-direction: column;
@@ -426,22 +506,13 @@ div.footer {
         text-align: center;
     }
     
-    div.documentwrapper {
-        margin: 1rem;
-        padding: 1.5rem;
-    }
-    
     div.body h1 {
         font-size: 2rem;
-    }
-    
-    div.sphinxsidebarwrapper {
-        padding: 1rem;
     }
 }
 
 /* ========================================
-   Scrollbar Styling (Webkit browsers)
+   General Scrollbar Styling (Webkit browsers)
    ======================================== */
 ::-webkit-scrollbar {
     width: 10px;
@@ -459,4 +530,31 @@ div.footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #a0a0a0;
+}
+
+/* ========================================
+   Relations (Next/Previous navigation)
+   ======================================== */
+div.relations {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 3rem;
+}
+
+div.relations a {
+    color: #3498db;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: all 0.2s ease;
+}
+
+div.relations a:hover {
+    background: #FFC904;
+    color: #1a1a1a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
