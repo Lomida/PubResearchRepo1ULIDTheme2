@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='unary-theme',
+    name='unary_theme',
     version='0.1.0',
     description='the unary lab theme',
     author='Devon Lister',
@@ -25,7 +25,7 @@ setup(
     ],
     entry_points={
         'sphinx.html_themes': [
-            'my_custom_theme = my_custom_sphinx_theme',
+            'unary_theme = unary_theme',
         ]
     },
 )

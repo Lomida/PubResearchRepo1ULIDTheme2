@@ -7,12 +7,12 @@ __version__ = '0.1.0'
 
 # Depreciated in newer Sphinx
 def get_html_theme_path():
-    """Return list of HTML theme paths."""
+    """Return list of HTML theme paths"""
     return [path.abspath(path.dirname(__file__))]
 
 
 def get_path():
-    """Return path to theme directory.
+    """Return path to theme directory
     
     This is used by Sphinx's html_theme_path configuration.
     """
@@ -20,7 +20,7 @@ def get_path():
 
 
 def setup(app):
-    """Setup function called by Sphinx."""
+    """Setup function called by Sphinx"""
     app.add_html_theme('unary_theme', path.abspath(path.dirname(__file__)))
     
     return {
