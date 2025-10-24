@@ -13,9 +13,8 @@ setup(
         'unary_theme': [
             'theme.conf',
             '*.html',
-            'static/*.css',
-            'static/*.js',
-        ],
+            'static/*', 
+                   ],
     },
     install_requires=[
         'sphinx>=4.0',
